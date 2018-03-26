@@ -71,16 +71,17 @@ public class SearchableList {
 		ArrayList<Integer> oldPositions = new ArrayList<Integer>();
 		int index = -2;
 		int repeats = 1;
-		int maxRecursiveChecks = 4;
+		int maxRecursiveChecks = 3;
 		
 		while(index == -2) {
 			
 			//Allow the program to end the loop if it has to recheck
 			//    the same value multiple times.
 			if(oldPositions.size() >= maxRecursiveChecks) {
-				if(oldPositions.get(oldPositions.size() - 1) == 
-						oldPositions.get(oldPositions.size() - maxRecursiveChecks)) {
+				if(oldPositions.get(oldPositions.size() - 1).equals( 
+						oldPositions.get(oldPositions.size() - maxRecursiveChecks))) {
 					index = findClosest ? (int) Math.round(position) : -1;
+					break;
 				}
 			}
 			
