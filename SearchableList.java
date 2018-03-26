@@ -119,6 +119,8 @@ public class SearchableList {
 				//Correct index for the closest item in sortedList that is
 				//    larger than 'number'
 				sortedList.add(++index, number);
+			} else {
+				sortedList.add(index, number);
 			}
 		}
 	}
